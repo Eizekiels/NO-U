@@ -6,7 +6,7 @@
 /*   By: mguyout <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 19:15:22 by mguyout           #+#    #+#             */
-/*   Updated: 2018/04/29 21:19:29 by mguyout          ###   ########.fr       */
+/*   Updated: 2018/04/29 21:05:56 by mguyout          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	reflexion_transparency(t_rt *rt)
 
 void	reflexion_depth(t_rt *rt)
 {
-	while (rt->inter->reflex > 0 && rt->depth < 10)
+	while (rt->inter->reflex > 0 && rt->depth < 2)
 	{
 		if (rt->inter->dst <= 0.01)
 			rt->inter->dst = 0;

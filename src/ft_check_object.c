@@ -6,7 +6,7 @@
 /*   By: kboucaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/03 00:31:27 by kboucaud          #+#    #+#             */
-/*   Updated: 2018/04/28 18:32:17 by mguyout          ###   ########.fr       */
+/*   Updated: 2018/04/28 21:18:28 by mguyout          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void		ft_check_object(t_rt *rt)
 	rt->light = rt->start->lgh;
 	rt->inter->reflex = 0;
 	check_forms(rt, 0);
-	if (rt->inter->reflex > 0)
+	if (rt->inter->reflex > 0 && rt->lock == 0)
 		ft_reflexion_ray(rt);
 	else
 	{
@@ -106,6 +106,5 @@ void		ft_check_object(t_rt *rt)
 			ft_get_point(rt);
 			ft_get_light(rt);
 		}
-	}	
-	return ;
+	}
 }

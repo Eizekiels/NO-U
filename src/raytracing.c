@@ -6,7 +6,7 @@
 /*   By: kboucaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/03 20:11:06 by kboucaud          #+#    #+#             */
-/*   Updated: 2018/04/28 00:01:47 by mguyout          ###   ########.fr       */
+/*   Updated: 2018/04/28 21:06:43 by mguyout          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void		ft_convert(t_rt *rt)
 
 void		ft_ray(t_rt *rt, int x, int y, int type)
 {
+	rt->tmp = rt->ray->dir;
 	ft_check_object(rt);
 	ft_convert(rt);
 	if (type == 2)
@@ -56,6 +57,7 @@ void		ft_raytracing(t_rt *rt)
 		while (++x < WIN_LEN)
 		{
 			rt->depth = 0;
+			rt->lock = 0;
 			ft_ini_ray(rt, x, y);
 			ft_ray(rt, x, y, 1);
 			rt->ray->o = rt->cam->pos;
